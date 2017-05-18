@@ -1,104 +1,24 @@
-set nocompatible "與vi不相容
-set number "行號
-syntax enable "highlight
+"general setting 
+syntax on
+set nocompatible "不相容vi
 set encoding=utf8
-set cursorline "游標
-set incsearch
-set hlsearch
-set tabstop=4
+set number "行號
+set tabstop=4 shiftwidth=4 expandtab
 set backspace=2
-
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
-
-"Vundle Plugin
-call vundle#begin()
-Plugin 'Vundlevim/Vundle.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'Yggdroot/indentLine'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'jiangmiao/auto-pairs'
-Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'tomtom/tcomment_vim'
-Plugin 'ap/vim-css-color'
-Plugin 'mileszs/ack.vim'
-Plugin 'KurtPreston/vim-autoformat-rails'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'easymotion/vim-easymotion'
-Plugin 'mattn/emmet-vim'
-
-call vundle#end()
-
-"general settings
-filetype plugin indent on
-" set clipboard=unnamed
-set shiftwidth=4
-set expandtab
-set ai
-set hls
+set autoindent "自動縮排
+set hlsearch
+set incsearch
+set ignorecase
 set ruler
-set ic
-set smartindent
 
-if exists('$TMUX')
-    let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
-    let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-else
-    let &t_SI = "\<Esc>]50;CursorShape=1\x7"
-    let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-endif
-
-"airline{
-    set laststatus=2
-    let g:airline_theme='term'
-"}
+"plugin
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'easymotion/vim-easymotion'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'KurtPreston/vim-autoformat-rails'
+call plug#end()
 
 "NERDTree{
-    map <F2> :NERDTreeToggle<CR>
-    let NERDTreeShowBookmarks = 1
-    let NERDTreeShowHidden = 1
+    map <C-n> :NERDTreeToggle<CR>
 "}
-
-"syntastic{
-    set statusline+=%#warningmsg#
-    set statusline+=%{SyntasticStatuslineFlag()}
-    set statusline+=%*
-
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-"}
-
-"nerdcommenter{
-    let mapleader=","
-"}
-
-"t-comment{
-    map <c-/> <c-_><c-_>
-    map <c-b> <c-_>b
-"}
-
-"neocomplete{
-    let g:acp_enableAtStartup = 0
-    let g:neocomplete#enable_at_startup = 1
-    let g:neocomplete#enable_smart_case = 1
-"}
-
-"indentLine{
-    let g:indentLine_concealcursor = 'inc'
-    let g:indentLine_conceallevel = 2
-"}
-
-"EasyMotion{
-let g:EasyMotion_leader_key = '<Leader><Leader>'
-let mapleader=","
-"}
-
-"emmet-vim{
-"let g:user_emmet_expandabbr_key = '<Tab>'
-"}
-Plugin 'wakatime/vim-wakatime'

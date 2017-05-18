@@ -1,4 +1,12 @@
-set nocompatible
+set nocompatible "與vi不相容
+set number "行號
+syntax enable "highlight
+set encoding=utf8
+set cursorline "游標
+set incsearch
+set hlsearch
+set tabstop=4
+set backspace=2
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -26,21 +34,13 @@ call vundle#end()
 
 "general settings
 filetype plugin indent on
-syntax on
 " set clipboard=unnamed
-set encoding=utf8
-set number
-set cursorline
-set tabstop=4
 set shiftwidth=4
 set expandtab
 set ai
 set hls
 set ruler
-set incsearch
-set hlsearch
 set ic
-set backspace=2
 set smartindent
 
 if exists('$TMUX')
@@ -99,5 +99,6 @@ let mapleader=","
 "}
 
 "emmet-vim{
-let g:user_emmet_expandabbr_key = '<Tab>'
+"let g:user_emmet_expandabbr_key = '<Tab>'
 "}
+Plugin 'wakatime/vim-wakatime'

@@ -17,6 +17,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'easymotion/vim-easymotion'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'KurtPreston/vim-autoformat-rails'
+Plug 'mileszs/ack.vim'
 call plug#end()
 
 "NERDTree{

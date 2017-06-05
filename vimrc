@@ -28,6 +28,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-rails'
+Plug 'wakatime/vim-wakatime'
 call plug#end()
 
 " 將 <leader>鍵( \ ) 變成逗點鍵( , )

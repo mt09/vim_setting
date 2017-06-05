@@ -33,20 +33,6 @@ call plug#end()
 " 將 <leader>鍵( \ ) 變成逗點鍵( , )
 let mapleader=","
 
-"NERDTree{
-map <C-n> :NERDTreeToggle<CR>
-"}
-
-"FZF
-nnoremap <silent> <leader>e :FZF -m<CR>
-
-"airline{
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme="luna"
-set t_Co=256
-set laststatus=2
-"}
-
 " about buffer
 set hidden " 避免必须保存修改才可以跳转buffer" buffer快速導航
 nnoremap <Leader>b :bp<CR>
@@ -62,3 +48,18 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
+
+"NERDTree{
+map <C-n> :NERDTreeToggle<CR>
+"}
+
+"FZF
+nnoremap <silent> <leader>e :FZF -m<CR>
+
+"airline{
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_theme="luna"
+set t_Co=256
+set laststatus=2
+"}
+

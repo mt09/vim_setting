@@ -10,7 +10,7 @@ set hlsearch
 set incsearch
 set ignorecase
 set ruler "右下角游標座標顯示
-set cursorline
+"set cursorline
 
 "comment lines below coz editorconfig installed already.
 "autocmd Filetype html,xml,eruby,javascript,css,scss setlocal ts=4 sts=4 sw=4
@@ -29,12 +29,26 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-rails'
 Plug 'wakatime/vim-wakatime'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
+
+" Keybindings
 " 將 <leader>鍵( \ ) 變成逗點鍵( , )
 let mapleader=","
+map <Leader>d :NERDTreeToggle<CR>
+nnoremap <Leader>g :NERDTreeFind<CR>
+let g:NERDTreeDirArrowExpandable = '▶'
+let g:NERDTreeDirArrowCollapsible = '▼'
+nnoremap <silent> <leader>e :FZF -m<CR>
+map <C-n> :VimMultipleCursors<CR>
+let g:multi_cursor_next_key='<C-n>'
+"let g:multi_cursor_prev_key='<C-p>'
+"let g:multi_cursor_skip_key='<C-x>'
+"let g:multi_cursor_quit_key='<Esc>'
 
-" about buffer
+" buffers
 set hidden " 避免必须保存修改才可以跳转buffer" buffer快速導航
 nnoremap <Leader>b :bp<CR>
 nnoremap <Leader>f :bn<CR>" 查看buffers
@@ -49,13 +63,6 @@ nnoremap <Leader>7 :7b<CR>
 nnoremap <Leader>8 :8b<CR>
 nnoremap <Leader>9 :9b<CR>
 nnoremap <Leader>0 :10b<CR>
-
-"NERDTree{
-map <C-n> :NERDTreeToggle<CR>
-"}
-
-"FZF
-nnoremap <silent> <leader>e :FZF -m<CR>
 
 "airline{
 let g:airline#extensions#tabline#enabled = 1

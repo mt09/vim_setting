@@ -31,11 +31,11 @@ Plug 'tpope/vim-rails'
 Plug 'wakatime/vim-wakatime'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'rstacruz/sparkup'
 call plug#end()
 
 
 " Keybindings
-" 將 <leader>鍵( \ ) 變成逗點鍵( , )
 let mapleader=","
 map <Leader>d :NERDTreeToggle<CR>
 nnoremap <Leader>g :NERDTreeFind<CR>
@@ -49,10 +49,10 @@ let g:multi_cursor_next_key='<C-n>'
 "let g:multi_cursor_quit_key='<Esc>'
 
 " buffers
-set hidden " 避免必须保存修改才可以跳转buffer" buffer快速導航
+set hidden "避免必须保存修改才可以跳转buffer
 nnoremap <Leader>b :bp<CR>
-nnoremap <Leader>f :bn<CR>" 查看buffers
-nnoremap <Leader>l :ls<CR>" 通過索引快速跳轉
+nnoremap <Leader>f :bn<CR>
+"nnoremap <Leader>l :ls<CR> "通過索引快速跳轉
 nnoremap <Leader>1 :1b<CR>
 nnoremap <Leader>2 :2b<CR>
 nnoremap <Leader>3 :3b<CR>
